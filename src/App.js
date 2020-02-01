@@ -5,16 +5,19 @@ import './App.css'
 
 class App extends React.Component {
   render() {
-    const { name, surname, age } = this.props.user
+    const { user, page } = this.props;
+
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">My top photos</h1>
         </header>
         <p>
-          Hi {name} {surname}! Looks like you're {age} years old
+          Hi {user.name} {user.surname}! Looks like you're {user.age} years old
         </p>
-        <p className="App-intro">Here will be your top liked photos</p>
+        <p className="App-intro">
+          You have {page.photos.length} photos for the {page.year}
+        </p>
       </div>
     )
   }
@@ -24,6 +27,7 @@ const mapStateToProps = store => {
   console.log(store)
   return {
     user: store.user,
+    page: store.page,
   }
 }
 
