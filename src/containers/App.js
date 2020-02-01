@@ -1,7 +1,9 @@
-import React from 'react'
-import { connect } from 'react-redux'
+import React from "react";
+import { connect } from "react-redux";
+import Page from "../components/page";
+import User from "../components/user";
 
-import './App.css'
+import "./App.css";
 
 class App extends React.Component {
   render() {
@@ -12,12 +14,8 @@ class App extends React.Component {
         <header className="App-header">
           <h1 className="App-title">My top photos</h1>
         </header>
-        <p>
-          Hi {user.name} {user.surname}! Looks like you're {user.age} years old
-        </p>
-        <p className="App-intro">
-          You have {page.photos.length} photos for the {page.year}
-        </p>
+        <User {...user}/>
+        <Page {...page}/>
       </div>
     )
   }
