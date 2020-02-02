@@ -6,7 +6,7 @@ export default class User extends React.Component {
     const { name, surname } = this.props
 
     return (
-      <div>
+      <div className="ib user">
         <p> Hi {name} {surname}!</p>
       </div>
     )
