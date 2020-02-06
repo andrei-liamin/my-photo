@@ -18,6 +18,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "coverage": "react-scripts test --watchAll=false --coverage",
+    "open:coverage": "npm run coverage && open-cli ./coverage/lcov-report/index.html",
     "eject": "react-scripts eject",
     "precommit": "lint-staged",
     "eslint": "node_modules/.bin/eslint src/"
@@ -38,10 +40,13 @@
     ]
   },
   "devDependencies": {
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.2",
     "husky": "^4.2.1",
     "lint-staged": "^10.0.7",
+    "opn-cli": "^5.0.0",
     "prettier": "^1.19.1"
   },
   "lint-staged": {
@@ -49,6 +54,11 @@
       "node_modules/.bin/eslint --max-warnings=0",
       "prettier --write",
       "git add"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
     ]
   }
 }
