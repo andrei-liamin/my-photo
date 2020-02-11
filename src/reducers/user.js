@@ -1,4 +1,4 @@
-const initialState = {
+export const initialState = {
   name: 'Johnny',
   surname: 'Happy',
   age: 28,

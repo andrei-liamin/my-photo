@@ -6,7 +6,7 @@ import { getPhotos } from "../actions/pageActions";
 
 import "../styles/app.css";
 
-class App extends React.Component {
+export class App extends React.Component {
   render() {
     const { user, page, getPhotos } = this.props
 
@@ -19,14 +19,14 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = store => {
+export const mapStateToProps = store => {
   return {
     user: store.user,
     page: store.page,
   }
 }
 
-const mapDispatchToProps = dispatch => {
+export const mapDispatchToProps = dispatch => {
   return {
     getPhotos: year => dispatch(getPhotos(year))
   }
